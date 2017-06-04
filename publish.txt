@@ -1,0 +1,7 @@
+Instructions to publish your app
+
+0) keytool -genkey -v -keystore IonicPlaces.keystore -alias IonicPlaces -keyalg RSA -keysize 2048 -validity 10000
+1) sudo ionic cordova build android --prod --release
+2) sudo jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore IonicPlaces.keystore platforms/android/build/outputs/apk/android-release-unsigned.apk IonicPlaces
+3) zipalign -v 4 platforms/android/build/outputs/apk/android-release-unsigned.apk IonicPlaces.apk
+

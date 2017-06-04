@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{area?.title}}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-left [navPush]="mapPlacesPage" [navParams]="{area: area, places$: places$}">
+        <ion-icon name="map"></ion-icon>
+        Mapa
+      </button>
+    </ion-buttons>
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card *ngFor="let place of places$ | async" [navPush]="placePage" [navParams]="place">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <img src="{{place?.images[0]}}" *ngIf="place.images">
+        </ion-col>
+        <ion-col col-6 class="place-content">
+          <h2 color="primary">{{place.title}}</h2>
+          <div class="excerpt">{{place.excerpt}}</div>
+          <div class="address">{{place.address}}</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+</ion-content>

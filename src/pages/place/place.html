@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{place.title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+
+  <ion-slides #slider [pager]="true" [loop]="true" [autoplay]="5000" *ngIf="place?.images">
+    <ion-slide *ngFor="let image of place.images">
+      <img [src]="image"/>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="content">
+    <h2>{{place.title}}</h2>
+    <div class="place-description" [innerHTML]="placeDescription"></div>
+    <button class="btn-readme" ion-button clear (click)="readMore()" *ngIf="!isReadingMore">Leer más</button>
+    <button class="btn-readme" ion-button clear (click)="readLess()" *ngIf="isReadingMore">Mostrar menos</button>
+  </div>
+
+
+  <div id="map-metadata">
+    <div class="address">{{place.address}}</div>
+    <div *ngIf="(duration && isDisplayingRoute)">
+      <ion-icon name="walk" class="walk-icon"></ion-icon>
+      <span item-left class="duration">{{duration}}</span>
+      <span item-left class="distance">({{distance}})</span>
+    </div>
+  </div>
+  
+  <div #map id="map"></div>
+
+  <button ion-button full (click)="displayRoute()" *ngIf="!isDisplayingRoute">
+    <ion-icon large name='compass'></ion-icon>
+    &nbsp;&nbsp;Cómo llegar
+  </button>
+
+  <button ion-button full (click)="displayPlaceLocation()" *ngIf="isDisplayingRoute">
+    <ion-icon large name='pin'></ion-icon>
+    &nbsp;&nbsp;Ubicación de la taberna
+  </button>
+
+  <ion-fab right bottom>
+    <button ion-fab mini (click)="navigate()"><ion-icon name="navigate"></ion-icon></button>
+  </ion-fab>  
+
+</ion-content>

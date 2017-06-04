@@ -1,0 +1,25 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Barrios</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding class="card-background-page">
+
+  <ion-card *ngFor="let area of areas$ | async">
+    <a [navPush]="listPlaces" [navParams]="area">
+      <img src="{{area.imageUrl}}"/>
+      <div class="card-title">
+        {{area.title}}
+        <div class="card-subtitle">
+          {{area.placesCount}} Tabernas
+        </div>
+      </div>
+    </a>
+  </ion-card>
+
+</ion-content>

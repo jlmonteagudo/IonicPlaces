@@ -1,0 +1,45 @@
+page-list-places {
+
+  ion-list p {
+    font-style: italic;
+    margin-top: 5px !important;
+  }
+
+  .item-md ion-thumbnail ion-img, .item-md ion-thumbnail img {
+      width: 120px;
+      height: 80px;
+  }
+
+  .grid {
+    padding: 0px;
+  }
+
+  .col {
+    padding: 0px;
+  }
+
+  .place-content {
+    padding: 10px;
+  }
+
+  .card-md h2 {
+    //color: map-get($colors, primary);
+    font-size: 2.0rem;
+  }
+
+  .excerpt {
+    margin-top: 5px;
+    font-size: 1.2rem;
+  }
+
+  .address {
+    margin-top: 8px;
+    font-size: 1.3rem;
+    color: map-get($colors, primary);
+  }
+
+  ion-card img {
+      height: 100%;
+  }
+
+}

@@ -1,0 +1,70 @@
+page-place {
+
+  ion-slides {
+    height: auto;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #222 !important;
+    width: 12px;
+    height: 12px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+  }
+
+  .place-description {
+    text-align: justify;
+  }
+
+  #map {
+    height: 300px;
+    width: 100%;
+  }
+
+  .content {
+    padding: 20px;
+
+    h2 {
+      margin-top: 0px;
+    }
+  }
+
+  #map-metadata {
+
+    text-align: center;
+    margin-top: 35px;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+
+    div {
+      width: 100%;
+    }
+
+    .duration {
+      margin-left: 5px;
+      color: green;
+      font-weight: 500;
+    }
+
+    .address {
+      font-size: 1.7rem;
+      font-weight: 500;
+    }
+
+    .walk-icon {
+      font-size: 2.5rem;
+    }
+
+
+  }
+
+  .btn-readme {
+    float: right;
+  }
+
+}
+
+
